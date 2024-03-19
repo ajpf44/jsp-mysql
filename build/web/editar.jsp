@@ -35,7 +35,7 @@ try{
     String query = "UPDATE clientes SET nome = ?, endereco = ?, cidade = ?, telefone = ? WHERE cpf = ?";
     Editar cd = new Editar(query);
     
-    String[] args = {cpf, novoNome,novoEndereco,novaCidade,novoTelefone};
+    String[] args = {novoNome,novoEndereco,novaCidade,novoTelefone, cpf};
     cd.setInfo(args);
     
     boolean result = cd.executeUpdate();
