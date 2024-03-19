@@ -29,16 +29,15 @@
         }
     
    */
-        
     String query="SELECT * FROM clientes";
     Consultar c = new Consultar(query);
     ArrayList<String[]> results = c.getResult();
     out.println("NOME, CPF, ENDERECO, CIDADE, TELEFONE");
     for(String[] arrStr: results){
+        out.println("<br>");
         for(String s: arrStr){
             out.print(s + ", ");
         }
-        out.println("");
     }
 
 %>

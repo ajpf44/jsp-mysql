@@ -19,8 +19,14 @@ public class ConnectDB {
 
     public PreparedStatement getPreparedStatement() {
         PreparedStatement ps = null;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        }catch(Exception e){
+            System.out.println(e);
+        }
         
         try {
+            
             Connection connection = DriverManager.getConnection(this.URL, this.USERNAME, this.PASSWORD);
             ps = connection.prepareStatement(this.query);
         }catch ( SQLException e) {
